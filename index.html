@@ -62,8 +62,8 @@
       background: black;
       position: absolute;
       top: 50%;
-      transform-origin: 100%; /* Changes the pivot point to the end of each hand (100%) or centre of the clock, instead of the default pivot point in the middle of the hands (50%) */
-      transform: rotate(90deg); /* Makes hands start at the 12 instead of the 9 */
+      transform-origin: 100%;
+      transform: rotate(90deg);
     }
 
   </style>
@@ -78,8 +78,8 @@
       const now = new Date();
 
       const second = now.getSeconds();
-      const secondDegree = ((second * 360) / 60) + 90; // Adding 90 corrects for the 90deg rotate in the .hand styles above, so 0 seconds starts at the 12 instead of the 9
-      secondHand.style.transform = `rotate(${secondDegree}deg)`; // Moves hand by a one-second degree every second
+      const secondDegree = ((second * 360) / 60) + 90;
+      secondHand.style.transform = `rotate(${secondDegree}deg)`;
 
       const minute = now.getMinutes();
       const minuteDegree = ((minute * 360) / 60) + 90;
@@ -90,7 +90,7 @@
       hourHand.style.transform = `rotate(${hourDegree}deg)`;
     }
 
-    setInterval(setDate, 1000) // Runs setDate function every 1 second or 1,000 milliseconds
+    setInterval(setDate, 1000)
 
   </script>
 </body>
